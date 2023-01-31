@@ -1,6 +1,6 @@
 package com.dunky.in21hours;
 
-import com.dunky.in21hours.repository.PersonJdbcDao;
+import com.dunky.in21hours.repository.PersonJpaRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +18,9 @@ public class In21hoursApplication implements CommandLineRunner {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
-	PersonJdbcDao dao;
+	PersonJpaRepository jPaRepo;
 	@Override
 	public void run(String... args) throws Exception {
-		logger.info("All users -> {}", dao.findAll());
+		logger.info("All users -> {}", jPaRepo.findById(10001));
 	}
 }
