@@ -1,16 +1,16 @@
 package com.dunky.in21hours.entities;
 
-public class Book {
+public class Person{
     private long id;
     private String name;
-    private String author;
+    private String location;
 
     // Constructor
-    public Book(long id, String name, String author) {
+    public Person(long id, String name, String location) {
         super();
         this.id = id;
         this.name = name;
-        this.author = author;
+        this.location = location;
     }
 
     // Getter methods
@@ -22,8 +22,8 @@ public class Book {
         return name;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getLocation() {
+        return location;
     }
 
     // To string  method
@@ -32,7 +32,7 @@ public class Book {
         return "Book{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", author='" + author + '\'' +
+                ", author='" + location + '\'' +
                 '}';
     }
 }
