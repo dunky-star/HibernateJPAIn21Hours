@@ -9,7 +9,11 @@ public class Person{
 
     private Date birthDate;
 
-    // Constructor
+    // Default constructor
+    public Person() {
+    }
+
+    // parametrized Constructor
     public Person(long id, String name, String location, Date birthDate) {
         super();
         this.id = id;
@@ -35,9 +39,23 @@ public class Person{
         return birthDate;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
+
     // To string  method
-
-
     @Override
     public String toString() {
         return "Person{" +
