@@ -1,13 +1,17 @@
 package com.dunky.in21hours.entity;
 
+import javax.persistence.*;
 import java.util.Date;
 
-
+@Entity
+@Table(name="person")
 public class Person{
+    @Id
+    @GeneratedValue
     private long id;
     private String name;
     private String location;
-
+    @Column(name="birth_date")
     private Date birthDate;
 
     // Default constructor
@@ -18,6 +22,13 @@ public class Person{
     public Person(long id, String name, String location, Date birthDate) {
         super();
         this.id = id;
+        this.name = name;
+        this.location = location;
+        this.birthDate = birthDate;
+    }
+
+    public Person(String name, String location, Date birthDate) {
+        super();
         this.name = name;
         this.location = location;
         this.birthDate = birthDate;
