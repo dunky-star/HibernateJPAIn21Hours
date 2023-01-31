@@ -15,7 +15,7 @@ public class MyController {
 
     @GetMapping("/persons")
     public List<Person> getAllPersons(){
-        return Arrays.asList(new Person(10001, "Geoffrey", "Kampala", new Date("1988-05-05")));
+        return Arrays.asList(new Person(10001, "Geoffrey", "Kampala", new Date()));
     }
 
 }
