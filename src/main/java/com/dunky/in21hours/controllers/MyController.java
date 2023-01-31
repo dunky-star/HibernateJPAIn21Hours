@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 ;
@@ -14,7 +15,7 @@ public class MyController {
 
     @GetMapping("/persons")
     public List<Person> getAllBooks(){
-        return Arrays.asList(new Person(2l, "Mastering Spring REST 5.1", "Dunky Opiyo"));
+        return Arrays.asList(new Person(10001, "Geoffrey", "Kampala", new Date("1988-05-05")));
     }
 
 }

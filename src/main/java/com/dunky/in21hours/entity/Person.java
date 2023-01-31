@@ -36,12 +36,15 @@ public class Person{
     }
 
     // To string  method
+
+
     @Override
     public String toString() {
-        return "Book{" +
+        return "Person{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", author='" + location + '\'' +
+                ", location='" + location + '\'' +
+                ", birthDate=" + birthDate +
                 '}';
     }
 }
