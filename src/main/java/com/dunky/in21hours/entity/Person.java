@@ -1,16 +1,21 @@
-package com.dunky.in21hours.entities;
+package com.dunky.in21hours.entity;
+
+import java.util.Date;
 
 public class Person{
     private long id;
     private String name;
     private String location;
 
+    private Date birthDate;
+
     // Constructor
-    public Person(long id, String name, String location) {
+    public Person(long id, String name, String location, Date birthDate) {
         super();
         this.id = id;
         this.name = name;
         this.location = location;
+        this.birthDate = birthDate;
     }
 
     // Getter methods
@@ -24,6 +29,10 @@ public class Person{
 
     public String getLocation() {
         return location;
+    }
+
+    public Date getBirth_date() {
+        return birthDate;
     }
 
     // To string  method
