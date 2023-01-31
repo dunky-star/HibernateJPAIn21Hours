@@ -15,7 +15,7 @@ public class In21hoursApplication implements CommandLineRunner {
 		SpringApplication.run(In21hoursApplication.class, args);
 	}
 
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
 	PersonJdbcDao dao;
