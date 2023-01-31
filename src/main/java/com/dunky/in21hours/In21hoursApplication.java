@@ -1,5 +1,6 @@
 package com.dunky.in21hours;
 
+import com.dunky.in21hours.entity.Person;
 import com.dunky.in21hours.repository.PersonJpaRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import java.util.Date;
 
 @SpringBootApplication
 public class In21hoursApplication implements CommandLineRunner {
@@ -21,6 +24,23 @@ public class In21hoursApplication implements CommandLineRunner {
 	PersonJpaRepository jPaRepo;
 	@Override
 	public void run(String... args) throws Exception {
-		logger.info("All users -> {}", jPaRepo.findById(10001));
+		// Finding
+		logger.info("User id: 10001 -> {}", jPaRepo.findById(10001));
+
+		// Inserting
+		logger.info("Inserting: 10004 -> {}",
+				jPaRepo.insert(new Person(10004, "Tara", "New York", new Date())));
+		logger.info("Inserting: -> {}",
+				jPaRepo.insert(new Person("Arma lamaro", "Vancouver", new Date())));
+
+		// Updating
+		logger.info("Updating: 10003 -> {}",
+				jPaRepo.update(new Person(10003L, "Dede Pal", "Dubai", new Date())));
+
+		// Deleting
+		// jPaRepo.deleteById(10002);
+
+		// Query all persons
+		logger.info("All user -> {}", jPaRepo.findAll());
 	}
 }
