@@ -18,7 +18,7 @@ public class PersonJdbcDao {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    public List<Person> getAll(){
+    public List<Person> findAll(){
         return jdbcTemplate.query("Select * from person",
                 new BeanPropertyRowMapper<>(Person.class));
     }
