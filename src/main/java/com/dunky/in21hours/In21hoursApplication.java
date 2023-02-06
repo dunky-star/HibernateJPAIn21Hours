@@ -1,7 +1,7 @@
 package com.dunky.in21hours;
 
-import com.dunky.in21hours.entity.Person;
-import com.dunky.in21hours.repository.PersonJpaRepository;
+import com.dunky.in21hours.entity.Student;
+import com.dunky.in21hours.repository.StudentJpaRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ public class In21hoursApplication implements CommandLineRunner {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
-	PersonJpaRepository jPaRepo;
+	StudentJpaRepository jPaRepo;
 	@Override
 	public void run(String... args) throws Exception {
 		// Finding
@@ -29,13 +29,13 @@ public class In21hoursApplication implements CommandLineRunner {
 
 		// Inserting
 		logger.info("Inserting: 10004 -> {}",
-				jPaRepo.save(new Person(10004, "Tara", "New York", new Date())));
+				jPaRepo.save(new Student(10004L, "Tara", "New York", new Date())));
 		logger.info("Inserting: -> {}",
-				jPaRepo.save(new Person("Arma lamaro", "Vancouver", new Date())));
+				jPaRepo.save(new Student(10001L, "Arma lamaro", "Vancouver", new Date())));
 
 		// Updating
 		logger.info("Updating: 10003 -> {}",
-				jPaRepo.save(new Person(10003L, "Dede Pal", "Dubai", new Date())));
+				jPaRepo.save(new Student(10003L, "Dede Pal", "Dubai", new Date())));
 
 
 		// Query all persons

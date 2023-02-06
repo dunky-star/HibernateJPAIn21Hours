@@ -1,7 +1,7 @@
 package com.dunky.in21hours;
 
-import com.dunky.in21hours.entity.Person;
-import com.dunky.in21hours.repository.PersonJpaRepository;
+import com.dunky.in21hours.entity.Student;
+import com.dunky.in21hours.repository.StudentJpaRepository;
 import org.hibernate.query.Query;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -23,7 +23,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 class In21hoursApplicationTests {
 
 	@Autowired
-	PersonJpaRepository jPaRepo;
+	StudentJpaRepository jPaRepo;
 
 	@Autowired
 	EntityManager em;
@@ -36,8 +36,8 @@ class In21hoursApplicationTests {
 	@Test
 	public void findById_basic(){
 
-		Person person = jPaRepo.findById(10001);
-		assertEquals("Opiyo Kaligs", person.getName());
+		Student student = jPaRepo.findById(10001);
+		assertEquals("Lamaro Arma", student.getName());
 	}
 	@Test
 	@DirtiesContext
@@ -52,26 +52,26 @@ class In21hoursApplicationTests {
 	@Test
 	@DirtiesContext
 	public void save_basic(){
-		// Get a person
-		Person person = jPaRepo.findById(10001L);
-		assertEquals("Lamaro Arma", person.getName());
+		// Get a student
+		Student student = jPaRepo.findById(10001L);
+		assertEquals("Lamaro Arma", student.getName());
 		// Update the details
-		person.setName("Lamaro Arma");
-		jPaRepo.save(person);
+		student.setName("Lamaro Arma");
+		jPaRepo.save(student);
 
 		// Check the value
-		Person person1 = jPaRepo.findById(10001L);
-		assertEquals("Lamaro Arma", person.getName());
+		Student student1 = jPaRepo.findById(10001L);
+		assertEquals("Lamaro Arma", student.getName());
 		assertNull(jPaRepo.findById(10002L));
 
 	}
 
 	@Test
 	public void native_queries_sql(){
-		Query query = (Query) em.createNativeQuery("SELECT * FROM person WHERE id=:id", Person.class);
+		Query query = (Query) em.createNativeQuery("SELECT * FROM student WHERE id=:id", Student.class);
 		query.setParameter("id", 10001L);
 		List resultList = query.getResultList();
-		logger.info("SELECT * FROM Person -> {}", resultList);
+		logger.info("SELECT * FROM Student -> {}", resultList);
 	}
 
 }

@@ -4,23 +4,26 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@NamedQuery(name="find_all_persons", query="select p from Person p")
-@Table(name="person")
-public class Person{
+@NamedQuery(name="find_all_students", query="select p from Student p")
+@Table(name="student")
+public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Column(name="name")
     private String name;
+
+    @Column(name="location")
     private String location;
     @Column(name="birth_date")
     private Date birthDate;
 
     // Default constructor
-    public Person() {
+    public Student() {
     }
 
     // parametrized Constructor
-    public Person(long id, String name, String location, Date birthDate) {
+    public Student(long id, String name, String location, Date birthDate) {
         super();
         this.id = id;
         this.name = name;
@@ -28,7 +31,7 @@ public class Person{
         this.birthDate = birthDate;
     }
 
-    public Person(String name, String location, Date birthDate) {
+    public Student(String name, String location, Date birthDate) {
         super();
         this.name = name;
         this.location = location;
@@ -71,7 +74,7 @@ public class Person{
     // To string  method
     @Override
     public String toString() {
-        return "Person{\r\n " +
+        return "Student{\r\n " +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", location='" + location + '\'' +

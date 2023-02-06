@@ -1,6 +1,6 @@
 package com.dunky.in21hours.repository;
 
-import com.dunky.in21hours.entity.Person;
+import com.dunky.in21hours.entity.Student;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,33 +15,33 @@ import java.util.List;
 
 @Repository
 @Transactional
-public class PersonJpaRepository {
+public class StudentJpaRepository {
 
     //Connect to the database
     @PersistenceContext
     EntityManager entityManager;
 
     // Method to find a person by Id
-    public Person findById(long id){
-        return entityManager.find(Person.class, id);
+    public Student findById(long id){
+        return entityManager.find(Student.class, id);
     }
 
     // Method to insert/update a person
 
-    public Person save (Person person) {
-        entityManager.merge(person);
-        return person;
+    public Student save (Student student) {
+        entityManager.merge(student);
+        return student;
     }
 
     // Method to delete a person
     public void deleteById(long id){
-        Person person = findById(id);
-        entityManager.remove(person);
+        Student student = findById(id);
+        entityManager.remove(student);
     }
 
     // Query all persons from the database
-    public List<Person> findAll(){
-        TypedQuery<Person> namedQuery = entityManager.createNamedQuery("find_all_persons", Person.class);
+    public List<Student> findAll(){
+        TypedQuery<Student> namedQuery = entityManager.createNamedQuery("find_all_students", Student.class);
         return namedQuery.getResultList();
     }
 
