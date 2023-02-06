@@ -18,7 +18,7 @@ public class Student {
     @Column(name="birth_date")
     private Date birthDate;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     private Passport passport;
 
     // Default constructor
