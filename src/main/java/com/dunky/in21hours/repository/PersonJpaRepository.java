@@ -26,14 +26,11 @@ public class PersonJpaRepository {
         return entityManager.find(Person.class, id);
     }
 
-    // Method to insert a person
-    public Person insert(Person person){
-        return entityManager.merge(person);
-    }
+    // Method to insert/update a person
 
-    // Method to update a person
-    public Person update(Person person){
-        return entityManager.merge(person);
+    public Person save (Person person) {
+        entityManager.merge(person);
+        return person;
     }
 
     // Method to delete a person

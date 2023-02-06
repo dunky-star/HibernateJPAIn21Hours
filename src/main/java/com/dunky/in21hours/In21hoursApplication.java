@@ -29,16 +29,14 @@ public class In21hoursApplication implements CommandLineRunner {
 
 		// Inserting
 		logger.info("Inserting: 10004 -> {}",
-				jPaRepo.insert(new Person(10004, "Tara", "New York", new Date())));
+				jPaRepo.save(new Person(10004, "Tara", "New York", new Date())));
 		logger.info("Inserting: -> {}",
-				jPaRepo.insert(new Person("Arma lamaro", "Vancouver", new Date())));
+				jPaRepo.save(new Person("Arma lamaro", "Vancouver", new Date())));
 
 		// Updating
 		logger.info("Updating: 10003 -> {}",
-				jPaRepo.update(new Person(10003L, "Dede Pal", "Dubai", new Date())));
+				jPaRepo.save(new Person(10003L, "Dede Pal", "Dubai", new Date())));
 
-		// Deleting
-		// jPaRepo.deleteById(10002);
 
 		// Query all persons
 		logger.info("All user -> {}", jPaRepo.findAll());

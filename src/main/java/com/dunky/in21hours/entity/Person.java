@@ -71,7 +71,7 @@ public class Person{
     // To string  method
     @Override
     public String toString() {
-        return "Person{" +
+        return "Person{\r\n " +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", location='" + location + '\'' +
