@@ -24,7 +24,7 @@ public class In21hoursApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		studentRepo.saveStudentWithPassport();
-		
+
 //		// Query all persons
 //		logger.info("All user -> {}", jPaRepo.findAll());
 	}

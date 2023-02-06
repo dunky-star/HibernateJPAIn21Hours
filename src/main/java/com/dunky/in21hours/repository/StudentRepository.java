@@ -2,8 +2,6 @@ package com.dunky.in21hours.repository;
 
 import com.dunky.in21hours.entity.Passport;
 import com.dunky.in21hours.entity.Student;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,7 +12,6 @@ import java.util.Date;
 @Repository
 @Transactional
 public class StudentRepository {
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     EntityManager em;

@@ -29,7 +29,7 @@ class StudentRepoTests {
     @Test
     @Transactional
     public void retrieveStudentAndPassportDetails() {
-        Student student = em.find(Student.class, 10001L);
+        Student student = em.find(Student.class,  10007L);
         logger.info("student -> {}", student);
         logger.info("passport -> {}", student.getPassport());
     }
