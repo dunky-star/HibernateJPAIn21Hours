@@ -22,7 +22,7 @@ public class Student {
     private Passport passport;
 
     // Default constructor
-    public Student() {
+    protected Student() {
     }
 
     // parametrized Constructor

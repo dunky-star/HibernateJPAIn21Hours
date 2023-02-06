@@ -12,6 +12,8 @@ public class Passport {
     @Column(nullable = false)
     private String number;
 
+    protected Passport() {
+    }
     public Passport(String number) {
         this.number = number;
     }
