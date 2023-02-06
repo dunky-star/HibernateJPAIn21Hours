@@ -3,6 +3,7 @@ package com.dunky.in21hours.entity;
 import javax.persistence.*;
 
 @Entity
+@Table(name="passport")
 public class Passport {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
