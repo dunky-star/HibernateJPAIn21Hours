@@ -18,6 +18,9 @@ public class Student {
     @Column(name="birth_date")
     private Date birthDate;
 
+    @OneToOne
+    private Passport passport;
+
     // Default constructor
     public Student() {
     }
@@ -67,9 +70,23 @@ public class Student {
         this.location = location;
     }
 
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public Passport getPassport() {
+        return passport;
+    }
+
+    public void setPassport(Passport passport) {
+        this.passport = passport;
+    }
+
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
+
+
 
     // To string  method
     @Override

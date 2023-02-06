@@ -17,9 +17,11 @@ public class Course {
     @Column(nullable = false)
     private String name;
 
+    @Column(name="lastUpdated")
     @UpdateTimestamp
     private LocalDateTime lastUpdatedDate;
 
+    @Column(name="createdDate")
     @CreationTimestamp
     private LocalDateTime createdDate;
 
@@ -42,6 +44,6 @@ public class Course {
     public String toString() {
         return String.format("Course[%s]", name);
     }
-    
+
 
 }
