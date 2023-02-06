@@ -10,7 +10,7 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name="name")
+    @Column(name="name", nullable = false)
     private String name;
 
     @Column(name="location")
@@ -74,7 +74,7 @@ public class Student {
     // To string  method
     @Override
     public String toString() {
-        return "Student{\r\n " +
+        return "\n\r Student{ " +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", location='" + location + '\'' +
