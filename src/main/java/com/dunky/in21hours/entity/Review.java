@@ -54,6 +54,6 @@ public class Review {
 
     @Override
     public String toString() {
-        return String.format("Review[%s %s]", rating, description);
+        return String.format("\r\n Review[%s %s]", rating, description);
     }
 }

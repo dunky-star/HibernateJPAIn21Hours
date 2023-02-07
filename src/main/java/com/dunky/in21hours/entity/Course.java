@@ -76,7 +76,7 @@ public class Course {
 
     @Override
     public String toString() {
-        return String.format("Course[%s]", name);
+        return String.format("\r\n Course[%s]", name);
     }
 
 

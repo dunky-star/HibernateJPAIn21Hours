@@ -25,7 +25,7 @@ public class CourseRepoTest {
     EntityManager em;
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
-    
+
     @Test
     void contextLoads() {
         logger.info("Test is running...");
