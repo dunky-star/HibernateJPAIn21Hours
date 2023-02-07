@@ -29,6 +29,8 @@ public class Course {
     @OneToMany(mappedBy = "course")
     private List<Review> reviews = new ArrayList<>();
 
+    protected Course() {
+    }
     public Course(String name) {
         this.name = name;
     }

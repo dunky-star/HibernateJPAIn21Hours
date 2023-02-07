@@ -16,6 +16,9 @@ public class Review {
     @ManyToOne
     private Course course;
 
+    protected Review() {
+
+    }
     public Review(String rating, String description) {
         this.rating = rating;
         this.description = description;
