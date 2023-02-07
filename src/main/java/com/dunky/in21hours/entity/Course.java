@@ -29,6 +29,9 @@ public class Course {
     @OneToMany(mappedBy = "course")
     private List<Review> reviews = new ArrayList<>();
 
+    @ManyToMany
+    private List<Student> students = new ArrayList<>();
+
     protected Course() {
     }
     public Course(String name) {
@@ -70,6 +73,15 @@ public class Course {
     public void setName(String name) {
         this.name = name;
     }
+
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void addStudent(Student student) {
+        this.students.add(student);
+    }
+
     public Long getId() {
         return id;
     }
