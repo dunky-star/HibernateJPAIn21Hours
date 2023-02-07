@@ -27,6 +27,9 @@ public class In21hoursApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
+		// studentRepo.insertStudentAndCourse(new Student("Jack", "Nairobi",new Date()),
+				// new Course("Microservices in 100 Steps"));
+
 		// studentRepo.saveStudentAndPassport();
 
 		// List<Review> reviews = new ArrayList<>();

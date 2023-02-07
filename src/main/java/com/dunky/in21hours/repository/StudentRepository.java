@@ -1,5 +1,6 @@
 package com.dunky.in21hours.repository;
 
+import com.dunky.in21hours.entity.Course;
 import com.dunky.in21hours.entity.Passport;
 import com.dunky.in21hours.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,5 +59,14 @@ public class StudentRepository {
         student.setName("Ranga - updated");
         //Persistence Context (student++ , passport++)
     }
+
+    public void insertStudentAndCourse(Student student, Course course){
+        student.addCourse(course);
+        course.addStudent(student);
+
+        em.persist(student);
+        em.persist(course);
+    }
+
 
 }
