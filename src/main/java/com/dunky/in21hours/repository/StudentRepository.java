@@ -42,7 +42,7 @@ public class StudentRepository {
 
     public void operationsPersistenceContext() {
         //Database Operation 1 - Retrieve student
-        Student student = em.find(Student.class, 20001L);
+        Student student = em.find(Student.class, 10002L);
         //Persistence Context (student)
 
 

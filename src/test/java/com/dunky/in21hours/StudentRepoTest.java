@@ -33,9 +33,9 @@ class StudentRepoTests {
         logger.info("student -> {}", student);
         logger.info("passport -> {}", student.getPassport());
     }
-    
+
     @Test
-    public void someTest() {
+    public void persistenceContextTest() {
         studentRepo.operationsPersistenceContext();
     }
 }
