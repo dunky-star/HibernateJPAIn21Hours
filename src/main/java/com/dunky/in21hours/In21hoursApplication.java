@@ -1,7 +1,5 @@
 package com.dunky.in21hours;
 
-import com.dunky.in21hours.entity.FullTimeEmployee;
-import com.dunky.in21hours.entity.PartTimeEmployee;
 import com.dunky.in21hours.repository.CourseRepository;
 import com.dunky.in21hours.repository.EmployeeRepository;
 import com.dunky.in21hours.repository.StudentRepository;
@@ -11,8 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.math.BigDecimal;
 
 @SpringBootApplication
 public class In21hoursApplication implements CommandLineRunner {
@@ -49,13 +45,13 @@ public class In21hoursApplication implements CommandLineRunner {
 		// Query all persons
         // logger.info("All user -> {}", jPaRepo.findAll());
 
-		employeeRepo.insert(new PartTimeEmployee("Duncan", new BigDecimal("50")));
-		employeeRepo.insert(new FullTimeEmployee("Sheena", new BigDecimal("10000")));
+		// employeeRepo.insert(new PartTimeEmployee("Duncan", new BigDecimal("50")));
+		// employeeRepo.insert(new FullTimeEmployee("Sheena", new BigDecimal("10000")));
 
-		logger.info("Full Time Employees -> {}",
-				employeeRepo.retrieveAllFullTimeEmployees());
+		// logger.info("Full Time Employees -> {}",
+				// employeeRepo.retrieveAllFullTimeEmployees());
 
-		logger.info("Part Time Employees -> {}",
-				employeeRepo.retrieveAllPartTimeEmployees());
+		// logger.info("Part Time Employees -> {}",
+				// employeeRepo.retrieveAllPartTimeEmployees());
 	}
 }
