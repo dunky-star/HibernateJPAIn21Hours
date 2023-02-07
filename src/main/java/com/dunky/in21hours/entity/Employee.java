@@ -1,9 +1,9 @@
 package com.dunky.in21hours.entity;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
+@Inheritance(strategy=InheritanceType.JOINED)
 public abstract class Employee {
 
     @Id
