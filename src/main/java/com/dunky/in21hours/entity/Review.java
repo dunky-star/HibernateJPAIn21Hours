@@ -13,9 +13,20 @@ public class Review {
 
     private String description;
 
+    @ManyToOne
+    private Course course;
+
     public Review(String rating, String description) {
         this.rating = rating;
         this.description = description;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
     }
 
     public String getDescription() {
