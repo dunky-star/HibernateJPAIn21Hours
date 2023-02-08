@@ -17,7 +17,7 @@ import java.util.List;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = In21hoursApplication.class)
-public class JPQLTest {
+public class JPQLAndCriteriaTest {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
