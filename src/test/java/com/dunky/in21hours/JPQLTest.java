@@ -1,6 +1,7 @@
 package com.dunky.in21hours;
 
 import com.dunky.in21hours.entity.Course;
+import com.dunky.in21hours.entity.Student;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
@@ -43,6 +44,43 @@ public class JPQLTest {
         TypedQuery<Course> query = em.createQuery("Select c from Course c order by size(c.students) desc", Course.class);
         List<Course> resultList = query.getResultList();
         logger.info("Results -> {}", resultList);
+    }
+
+    @Test
+    public void jpql_students_passports_pattern() {
+        TypedQuery<Student> query = em.createQuery("Select s from Student s where s.passport.number like '%1234%'", Student.class);
+        List<Student> resultList = query.getResultList();
+        logger.info("Results -> {}", resultList);
+    }
+
+    @Test
+    public void join(){
+        Query query = em.createQuery("Select c, s from Course c JOIN c.students s");
+        List<Object[]> resultList = query.getResultList();
+        logger.info("Results Size -> {}", resultList.size());
+        for(Object[] result:resultList){
+            logger.info("Course{} Student{}", result[0], result[1]);
+        }
+    }
+
+    @Test
+    public void left_join(){
+        Query query = em.createQuery("Select c, s from Course c LEFT JOIN c.students s");
+        List<Object[]> resultList = query.getResultList();
+        logger.info("Results Size -> {}", resultList.size());
+        for(Object[] result:resultList){
+            logger.info("Course{} Student{}", result[0], result[1]);
+        }
+    }
+
+    @Test
+    public void cross_join(){
+        Query query = em.createQuery("Select c, s from Course c, Student s");
+        List<Object[]> resultList = query.getResultList();
+        logger.info("Results Size -> {}", resultList.size());
+        for(Object[] result:resultList){
+            logger.info("Course{} Student{}", result[0], result[1]);
+        }
     }
 
 
