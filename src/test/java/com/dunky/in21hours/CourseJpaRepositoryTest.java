@@ -14,7 +14,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import java.util.List;
 import java.util.Optional;
 
 import static org.junit.Assert.assertFalse;
@@ -44,8 +43,8 @@ public class CourseJpaRepositoryTest {
     public void sort() {
         // Sort sort = new Sort(Sort.Direction.ASC, "name");
         // logger.info("Sorted Courses -> {} ", repository.findAll(sort));
-        List<Course> courses = repository.findAll(Sort.by(Sort.Direction.DESC, "name"));
-        logger.info("Sorted Courses -> {} ", courses);
+        Page<Course> page = repository.findAll(PageRequest.of(0, 3, Sort.by(Sort.Direction.ASC, "name")));
+        logger.info("Sorted Courses -> {} ", page);
     }
 
     @Test
