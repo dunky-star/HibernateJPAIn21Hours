@@ -17,7 +17,7 @@ import java.util.List;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = In21hoursApplication.class)
-public class JPQLAndCriteriaTest {
+public class JPQLCriteriaNativeTest {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -82,6 +82,5 @@ public class JPQLAndCriteriaTest {
             logger.info("Course{} Student{}", result[0], result[1]);
         }
     }
-
 
 }
