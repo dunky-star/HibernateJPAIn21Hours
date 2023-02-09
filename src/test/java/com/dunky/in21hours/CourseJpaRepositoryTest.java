@@ -43,8 +43,8 @@ public class CourseJpaRepositoryTest {
     public void sort() {
         // Sort sort = new Sort(Sort.Direction.ASC, "name");
         // logger.info("Sorted Courses -> {} ", repository.findAll(sort));
-        Page<Course> page = repository.findAll(PageRequest.of(0, 3, Sort.by(Sort.Direction.ASC, "name")));
-        logger.info("Sorted Courses -> {} ", page);
+        Page<Course> page1 = repository.findAll(PageRequest.of(0, 3, Sort.by(Sort.Direction.ASC, "name")));
+        logger.info("Sorted Courses -> {} ", page1.getContent());
     }
 
     @Test
