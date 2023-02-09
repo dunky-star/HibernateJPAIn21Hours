@@ -58,4 +58,9 @@ public class CourseJpaRepositoryTest {
         logger.info("Second Page -> {} ", secondPage.getContent());
     }
 
+    @Test
+    public void findUsingName() {
+        logger.info("FindByName -> {} ", repository.findByNameOrderByIdDesc("JPA in 50 Steps"));
+    }
+
 }
