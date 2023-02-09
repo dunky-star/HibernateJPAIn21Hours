@@ -1,6 +1,6 @@
 package com.dunky.in21hours;
 
-import com.dunky.in21hours.repository.CourseRepository;
+import com.dunky.in21hours.repository.CourseJPaRepository;
 import com.dunky.in21hours.repository.EmployeeRepository;
 import com.dunky.in21hours.repository.StudentRepository;
 import org.slf4j.Logger;
@@ -23,7 +23,7 @@ public class In21hoursApplication implements CommandLineRunner {
 	StudentRepository studentRepo;
 
 	@Autowired
-	private CourseRepository courseRepo;
+	private CourseJPaRepository courseRepo;
 
 	@Autowired
 	private EmployeeRepository employeeRepo;
