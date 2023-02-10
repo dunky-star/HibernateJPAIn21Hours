@@ -1,5 +1,6 @@
 package com.dunky.in21hours;
 
+import com.dunky.in21hours.entity.Address;
 import com.dunky.in21hours.entity.Student;
 import com.dunky.in21hours.repository.StudentRepository;
 import org.junit.jupiter.api.Test;
@@ -16,7 +17,7 @@ import javax.persistence.EntityManager;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-class StudentRepoTests {
+class StudentRepoTest {
     @Autowired
     StudentRepository studentRepo;
     @Autowired
@@ -48,6 +49,14 @@ class StudentRepoTests {
     @DirtiesContext
     public void persistenceContextTest() {
         studentRepo.operationsPersistenceContext();
+    }
+
+    @Test
+    @Transactional
+    public void setAddressDetails() {
+        Student student = em.find(Student.class, 20001L);
+        student.setAddress(new Address("No 101", "Some Street", "Queensland"));
+        em.flush();
     }
 }
 

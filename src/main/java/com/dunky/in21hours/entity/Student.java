@@ -106,7 +106,17 @@ public class Student {
         this.birthDate = birthDate;
     }
 
+    public Address getAddress() {
+        return address;
+    }
 
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
+    }
 
     // To string  method
     @Override
