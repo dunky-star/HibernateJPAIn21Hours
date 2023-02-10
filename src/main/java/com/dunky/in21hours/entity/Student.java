@@ -20,6 +20,8 @@ public class Student {
     @Column(name="birth_date")
     private Date birthDate;
 
+    private Address address;
+
     @OneToOne(fetch = FetchType.LAZY)
     private Passport passport;
 
