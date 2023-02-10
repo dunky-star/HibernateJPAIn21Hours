@@ -13,7 +13,9 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityGraph;
 import javax.persistence.EntityManager;
+import javax.persistence.Subgraph;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -61,16 +63,27 @@ public class CourseRepoTest {
 
     @Test
     @Transactional
-    public void solvingnPlusOneProblem() {
-        Object graph;
+    public void solvingNPlusOneProblem() {
+        EntityGraph<Course> entityGraph = em.createEntityGraph(Course.class);
+        Subgraph<Object> subGraph = entityGraph.addSubgraph("students");
         List<Course> courses = em
                 .createNamedQuery("query_get_all_courses", Course.class)
-                .setHint("javax.persistnce.loadgraph", graph)
+                .setHint("javax.persistnce.loadgraph", entityGraph)
                 .getResultList();
         for(Course course:courses){
             logger.info("Course -> {} Students -> {}",course, course.getStudents());
         }
     }
 
+    @Test
+    @Transactional
+    public void solvingNPlusOneProblem_JoinFetch() {
+        List<Course> courses = em
+                .createNamedQuery("query_get_all_courses_join_fetch", Course.class)
+                .getResultList();
+        for(Course course:courses){
+            logger.info("Course -> {} Students -> {}",course, course.getStudents());
+        }
+    }
 
 }
