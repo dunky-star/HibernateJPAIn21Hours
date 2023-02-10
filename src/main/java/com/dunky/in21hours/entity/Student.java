@@ -20,6 +20,7 @@ public class Student {
     @Column(name="birth_date")
     private Date birthDate;
 
+    @Embedded
     private Address address;
 
     @OneToOne(fetch = FetchType.LAZY)
