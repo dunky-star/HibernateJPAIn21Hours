@@ -59,4 +59,18 @@ public class CourseRepoTest {
         }
     }
 
+    @Test
+    @Transactional
+    public void solvingnPlusOneProblem() {
+        Object graph;
+        List<Course> courses = em
+                .createNamedQuery("query_get_all_courses", Course.class)
+                .setHint("javax.persistnce.loadgraph", graph)
+                .getResultList();
+        for(Course course:courses){
+            logger.info("Course -> {} Students -> {}",course, course.getStudents());
+        }
+    }
+
+
 }
