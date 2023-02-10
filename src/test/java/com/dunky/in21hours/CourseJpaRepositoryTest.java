@@ -63,4 +63,6 @@ public class CourseJpaRepositoryTest {
         logger.info("FindByName -> {} ", repository.findByNameOrderByIdDesc("JPA in 50 Steps"));
     }
 
+
+
 }

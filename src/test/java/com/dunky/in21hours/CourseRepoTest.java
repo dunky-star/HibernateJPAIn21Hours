@@ -2,14 +2,15 @@ package com.dunky.in21hours;
 
 import com.dunky.in21hours.entity.Course;
 import com.dunky.in21hours.repository.CourseRepository;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 
@@ -32,10 +33,19 @@ public class CourseRepoTest {
     }
 
     @Test
-    @Transactional
-    public void findById_course() {
+    public void findById_Course() {
         Course course = courseRepo.findById(10001L);
         assertEquals("JPA in 50 Steps", course.getName());
     }
+
+
+    @Test
+    @DirtiesContext
+    public void deleteById_Course() {
+        courseRepo.deleteById(10007L);
+        Assertions.assertNull(courseRepo.findById(10007L));
+    }
+
+
 
 }
