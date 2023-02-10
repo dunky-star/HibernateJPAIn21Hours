@@ -34,6 +34,9 @@ public class Course {
     @JsonIgnore
     private List<Student> students = new ArrayList<>();
 
+    @Column(name="is_deleted")
+    private boolean isDeleted;
+
     protected Course() {
     }
     public Course(String name) {
@@ -86,6 +89,14 @@ public class Course {
 
     public Long getId() {
         return id;
+    }
+
+    public boolean isDeleted() {
+        return isDeleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
     }
 
     @Override
