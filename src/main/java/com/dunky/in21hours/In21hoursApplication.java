@@ -1,6 +1,7 @@
 package com.dunky.in21hours;
 
 import com.dunky.in21hours.repository.CourseJPaRepository;
+import com.dunky.in21hours.repository.CourseRepository;
 import com.dunky.in21hours.repository.EmployeeRepository;
 import com.dunky.in21hours.repository.StudentRepository;
 import org.slf4j.Logger;
@@ -23,6 +24,9 @@ public class In21hoursApplication implements CommandLineRunner {
 	StudentRepository studentRepo;
 
 	@Autowired
+	CourseRepository courseRepository;
+
+	@Autowired
 	private CourseJPaRepository courseRepo;
 
 	@Autowired
@@ -37,10 +41,10 @@ public class In21hoursApplication implements CommandLineRunner {
 		// studentRepo.saveStudentAndPassport();
 
 		// List<Review> reviews = new ArrayList<>();
-		// reviews.add(new Review("5", "Great Hands-on Stuff."));
-		// reviews.add(new Review("5", "Hatsoff."));
+		// reviews.add(new Review(ReviewRating.FIVE, "An excellent course right there."));
+		// reviews.add(new Review(ReviewRating.THREE, "Amazing. I love the course."));
 
-		// courseRepo.addReviewsForCourse(10003L, reviews );
+		// courseRepository.addReviewsForCourse(10005L, reviews );
 
 		// Query all persons
         // logger.info("All user -> {}", jPaRepo.findAll());
